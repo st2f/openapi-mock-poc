@@ -1,0 +1,55 @@
+openapi: 3.0.3
+info:
+  title: Vacation Rental API
+  version: 1.0.0
+servers:
+  - url: http://localhost:4010
+paths:
+  /properties:
+    get:
+      operationId: getProperties
+      summary: Retrieve all properties
+      responses:
+        '200':
+          description: List of properties
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Property'
+
+  /properties/{id}:
+    get:
+      operationId: getPropertyById
+      summary: Retrieve a property by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Property details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Property'
+
+components:
+  schemas:
+    Property:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        city:
+          type: string
+        price:
+          type: number
+      required:
+        - id
+        - title

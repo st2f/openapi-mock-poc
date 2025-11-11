@@ -1,0 +1,8 @@
+apis/DefaultApi.ts
+apis/index.ts
+docs/DefaultApi.md
+docs/Property.md
+index.ts
+models/Property.ts
+models/index.ts
+runtime.ts

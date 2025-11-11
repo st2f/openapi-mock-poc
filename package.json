@@ -1,0 +1,24 @@
+{
+  "name": "openapi-mock-poc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "generate": "openapi-generator-cli generate -i openapi.yaml -g typescript-fetch -o client",
+    "mock": "prism mock openapi.yaml",
+    "test": "vitest run"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@openapitools/openapi-generator-cli": "^2.25.0",
+    "@stoplight/prism-cli": "^5.14.2",
+    "@vitest/coverage-v8": "^4.0.8",
+    "vitest": "^4.0.8"
+  }
+}
